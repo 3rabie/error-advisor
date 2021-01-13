@@ -1,0 +1,36 @@
+{
+  "name": "error-advisor",
+  "version": "1.0.0",
+  "description": "NPM module that aim to facilitate the error handling by providing http errors classes and also let you customize business errors as well with handy and clean way.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:3rabie/error-advisor.git"
+  },
+  "keywords": [
+    "Typescript",
+    "TypeScript",
+    "NodeJS",
+    "NPM",
+    "npm",
+    "Module",
+    "Error",
+    "ErrorHandling",
+    "Advisor",
+    "Handling",
+    "ErrorAdvisor",
+    "Exceptions",
+    "Http",
+    "HttpErrors",
+    "Validation"
+  ],
+  "author": "Abdulrahman Rabie Draz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/3rabie/error-advisor/issues"
+  },
+  "homepage": "https://github.com/3rabie/error-advisor#readme"
+}
