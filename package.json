@@ -2,7 +2,7 @@
   "name": "error-advisor",
   "version": "1.0.0",
   "description": "NPM module that aim to facilitate the error handling by providing http errors classes and also let you customize business errors as well with handy and clean way.",
-  "main": "index.js",
+  "main": "./src/advisor/ExceptionAdvisor.ts",
   "scripts": {
     "test": "npm test"
   },
@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/3rabie/error-advisor/issues"
   },
-  "homepage": "https://github.com/3rabie/error-advisor#readme"
+  "homepage": "https://github.com/3rabie/error-advisor#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.20"
+  }
 }
