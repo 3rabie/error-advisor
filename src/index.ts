@@ -1,11 +1,17 @@
-import { config } from "dotenv"
-import app from "./routes/index"
+import Utils from "./advisor/util/Utils";
+import { logger } from "./logger";
 
-config()
+exports = module.exports = function errorAdvisor(debug: Boolean, log: Boolean, err: any, req: any, res: any) {
 
-const port = process.env.SERVER_PORT // default port to listen
-// runScheduledJobs()
+    let error = Utils.errorBuilder(err.message, err.unauthorized, err.status, err.timestamp);
 
-// start the Express server
-export let server = app.listen(port, () => {
-})
+    if (debug) {
+        error.stack = err.stack;
+    }
+
+    if (log && typeof log === 'boolean') {
+        logger.error(error);
+    }
+
+    return res.status(err.status).json(error);
+}
