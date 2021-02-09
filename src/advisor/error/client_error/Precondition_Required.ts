@@ -1,4 +1,4 @@
-class Precondition_Required extends Error {
+export default class Precondition_Required extends Error {
 
     constructor(msg: string, preconditionRequired: any) {
         super(msg);

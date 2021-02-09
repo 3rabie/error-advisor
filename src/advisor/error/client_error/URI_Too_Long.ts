@@ -1,4 +1,4 @@
-class URI_Too_Long extends Error {
+export default class URI_Too_Long extends Error {
 
     constructor(msg: string, uriTooLong: any) {
         super(msg);

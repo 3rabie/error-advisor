@@ -1,4 +1,4 @@
-class Gone extends Error {
+export default class Gone extends Error {
 
     constructor(msg: string, gone: any) {
         super(msg);

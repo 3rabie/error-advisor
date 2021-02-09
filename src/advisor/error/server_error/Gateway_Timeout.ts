@@ -1,4 +1,4 @@
-class Gateway_Timeout extends Error {
+export default class Gateway_Timeout extends Error {
 
     constructor(msg: string, gatewayTimeout: any) {
         super(msg);

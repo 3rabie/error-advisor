@@ -1,4 +1,4 @@
-class Request_Timeout extends Error {
+export default class Request_Timeout extends Error {
 
     constructor(msg: string, requestTimeout: any) {
         super(msg);

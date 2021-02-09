@@ -1,4 +1,4 @@
-class Range_Not_Satisfiable extends Error {
+export default class Range_Not_Satisfiable extends Error {
 
     constructor(msg: string, rangeNotSatisfiable: any) {
         super(msg);

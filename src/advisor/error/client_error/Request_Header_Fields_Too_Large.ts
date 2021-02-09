@@ -1,4 +1,4 @@
-class Request_Header_Fields_Too_Large extends Error {
+export default class Request_Header_Fields_Too_Large extends Error {
 
     constructor(msg: string, requestHeaderFieldsTooLarge: any) {
         super(msg);

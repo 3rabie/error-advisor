@@ -1,4 +1,4 @@
-class Internal_Server_Error extends Error {
+export default class Internal_Server_Error extends Error {
 
     constructor(msg: string, internalServerErrors: any) {
         super(msg);

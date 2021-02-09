@@ -1,4 +1,4 @@
-class Network_Authentication_Required extends Error {
+export default class Network_Authentication_Required extends Error {
 
     constructor(msg: string, networkAuthenticationRequired: any) {
         super(msg);

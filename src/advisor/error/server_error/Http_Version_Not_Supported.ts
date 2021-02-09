@@ -1,4 +1,4 @@
-class Http_Version_Not_Supported extends Error {
+export default class Http_Version_Not_Supported extends Error {
 
     constructor(msg: string, httpVersionNotSupported: any) {
         super(msg);

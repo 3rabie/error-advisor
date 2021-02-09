@@ -1,4 +1,4 @@
-class Too_Early extends Error {
+export default class Too_Early extends Error {
 
     constructor(msg: string, tooEarly: any) {
         super(msg);

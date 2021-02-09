@@ -1,4 +1,4 @@
-class I_Am_A_Teapot extends Error {
+export default class I_Am_A_Teapot extends Error {
 
     constructor(msg: string, iAmATeapot: any) {
         super(msg);

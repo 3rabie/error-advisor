@@ -1,7 +1,7 @@
 import Utils from "./advisor/util/Utils";
 import { logger } from "./logger";
 
-exports = module.exports = function errorAdvisor(debug: Boolean, log: Boolean, err: any, req: any, res: any) {
+export default function errorAdvisor(debug: Boolean, log: Boolean, err: any, req: any, res: any) {
 
     let error = Utils.errorBuilder(err.message, err.unauthorized, err.status, err.timestamp);
 
@@ -15,3 +15,7 @@ exports = module.exports = function errorAdvisor(debug: Boolean, log: Boolean, e
 
     return res.status(err.status).json(error);
 }
+
+export * from "./advisor/error/client_error/Client_Errors";
+export * from "./advisor/error/server_error/Server_Errors";
+

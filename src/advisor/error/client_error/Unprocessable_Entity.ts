@@ -1,4 +1,4 @@
-class Unprocessable_Entity extends Error {
+export default class Unprocessable_Entity extends Error {
 
     constructor(msg: string, unprocessableEntity: any) {
         super(msg);

@@ -1,4 +1,4 @@
-class Unauthorized extends Error {
+export default class Unauthorized extends Error {
 
     constructor(msg: string, unauthorized: any) {
         super(msg);

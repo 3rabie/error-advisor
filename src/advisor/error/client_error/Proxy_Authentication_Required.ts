@@ -1,4 +1,4 @@
-class Proxy_Authentication_Required extends Error {
+export default class Proxy_Authentication_Required extends Error {
 
     constructor(msg: string, proxyAuthenticationRequired: any) {
         super(msg);

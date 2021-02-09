@@ -1,4 +1,4 @@
-class Loop_Detected extends Error {
+export default class Loop_Detected extends Error {
 
     constructor(msg: string, loopDetected: any) {
         super(msg);

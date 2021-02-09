@@ -1,4 +1,4 @@
-class Not_Acceptable extends Error {
+export default class Not_Acceptable extends Error {
 
     constructor(msg: string, notAcceptable: any) {
         super(msg);

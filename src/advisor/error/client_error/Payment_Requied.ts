@@ -1,4 +1,4 @@
-class Payment_Requied extends Error {
+export default class Payment_Requied extends Error {
 
     constructor(msg: string, paymentRequied: any) {
         super(msg);

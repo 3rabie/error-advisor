@@ -1,4 +1,4 @@
-class Too_Many_Requests extends Error {
+export default class Too_Many_Requests extends Error {
 
     constructor(msg: string, tooManyRequests: any) {
         super(msg);

@@ -1,4 +1,4 @@
-class Not_Implemented extends Error {
+export default class Not_Implemented extends Error {
 
     constructor(msg: string, notImplemented: any) {
         super(msg);

@@ -1,4 +1,4 @@
-class Payload_Too_Large extends Error {
+export default class Payload_Too_Large extends Error {
 
     constructor(msg: string, payloadTooLarge: any) {
         super(msg);

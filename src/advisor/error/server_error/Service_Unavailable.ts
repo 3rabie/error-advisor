@@ -1,4 +1,4 @@
-class Service_Unavailable extends Error {
+export default class Service_Unavailable extends Error {
 
     constructor(msg: string, serviceUnavailable: any) {
         super(msg);

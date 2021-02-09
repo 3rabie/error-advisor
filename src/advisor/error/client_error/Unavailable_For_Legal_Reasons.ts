@@ -1,4 +1,4 @@
-class Unavailable_For_Legal_Reasons extends Error {
+export default class Unavailable_For_Legal_Reasons extends Error {
 
     constructor(msg: string, unavailableForLegalReasons: any) {
         super(msg);

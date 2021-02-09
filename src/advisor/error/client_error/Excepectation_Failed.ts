@@ -1,4 +1,4 @@
-class ExcepectationFailed extends Error {
+export default class ExcepectationFailed extends Error {
 
     constructor(msg: string, excepectationFailed: any) {
         super(msg);

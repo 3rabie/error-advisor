@@ -1,4 +1,4 @@
-class Forbidden extends Error {
+export default class Forbidden extends Error {
 
     constructor(msg: string, forbidden: any) {
         super(msg);

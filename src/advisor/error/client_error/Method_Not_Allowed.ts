@@ -1,4 +1,4 @@
-class Method_Not_Allowed extends Error {
+export default class Method_Not_Allowed extends Error {
 
     constructor(msg: string, methodNotAllowed: any) {
         super(msg);

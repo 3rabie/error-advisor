@@ -1,4 +1,4 @@
-class Length_Required extends Error {
+export default class Length_Required extends Error {
 
     constructor(msg: string, lengthRequired: any) {
         super(msg);

@@ -1,4 +1,4 @@
-class Insufficient_Storage extends Error {
+export default class Insufficient_Storage extends Error {
 
     constructor(msg: string, insufficientStorage: any) {
         super(msg);

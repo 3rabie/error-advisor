@@ -1,4 +1,4 @@
-class Variant_Also_Negotiates extends Error {
+export default class Variant_Also_Negotiates extends Error {
 
     constructor(msg: string, variantAlsoNegotiates: any) {
         super(msg);

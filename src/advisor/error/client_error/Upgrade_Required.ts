@@ -1,4 +1,4 @@
-class Upgrade_Required extends Error {
+export default class Upgrade_Required extends Error {
 
     constructor(msg: string, upgradeRequired: any) {
         super(msg);

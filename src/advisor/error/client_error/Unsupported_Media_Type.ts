@@ -1,4 +1,4 @@
-class Unsupported_Media_Type extends Error {
+export default class Unsupported_Media_Type extends Error {
 
     constructor(msg: string, unsupportedMediaType: any) {
         super(msg);

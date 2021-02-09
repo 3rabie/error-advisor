@@ -1,4 +1,4 @@
-class Bad_Gateway extends Error {
+export default class Bad_Gateway extends Error {
 
     constructor(msg: string, badGateway: any) {
         super(msg);
