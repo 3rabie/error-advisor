@@ -1,4 +1,4 @@
-enum StatusCode {
+export enum StatusCode {
 
 
     // 4xx Client Error Codes,  

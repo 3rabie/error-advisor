@@ -1,10 +1,16 @@
-export default class Bad_Request extends Error {
+import { StatusCode } from "../../enum/StatusCode";
 
-    constructor(msg: string, badRequest: any) {
+export default class Bad_Request extends Error {
+    status: StatusCode;
+    type: string;
+    timestamp: number;
+
+    constructor(msg?: string) {
+        msg = msg || "Request cannot be fulfilled - Malformed request syntax.";
         super(msg);
         this.name = "Bad Request";
-        Object.defineProperty(this, 'status', { value: StatusCode.BAD_REQUEST });
-        Object.defineProperty(this, 'type', { value: badRequest });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.status = StatusCode.BAD_REQUEST;
+        this.type = this.name;
+        this.timestamp = +new Date();
     }
 }
