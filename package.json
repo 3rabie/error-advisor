@@ -5,7 +5,7 @@
   "main": "lib/index.ts",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
