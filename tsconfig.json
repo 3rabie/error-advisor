@@ -1,24 +1,25 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "esModuleInterop": true,
         "target": "es6",
-        "noImplicitAny": true,
-        "moduleResolution": "node",
+        "module": "commonjs",
+        "declaration": true,
+        "esModuleInterop": true,
         "sourceMap": true,
-        "outDir": "dist",
+        "outDir": "./lib",
         "baseUrl": ".",
         "paths": {
             "*": [
                 "node_modules/*"
             ]
-        }
+        },
+        "strict": true
     },
     "include": [
         "src/**/*.ts"
     ],
     "exclude": [
-        "**/*.test.ts", //if backend app 
-        "**/*.spec.ts", //if frontend app
+        "node_modules",
+        "**/*.test.ts",
+        "**/*.spec.ts",
     ]
 }

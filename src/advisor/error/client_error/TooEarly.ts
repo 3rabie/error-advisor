@@ -1,15 +1,15 @@
 import { StatusCode } from "../../enum/StatusCode";
 
-export default class Gone extends Error {
+export default class TooEarly extends Error {
   statusCode: StatusCode;
   type: string;
   timestamp: number;
 
   constructor(message?: string) {
-    message = message || "Request cannot be fulfilled - Resource has been removed andor no longer available.";
+    message = message || "Request cannot be fulfilled - Potential risk for a replay attack";
     super(message);
-    this.name = "Gone";
-    this.statusCode = StatusCode.GONE;
+    this.name = "Too Early";
+    this.statusCode = StatusCode.TOO_EARLY;
     this.type = this.name;
     this.timestamp = +new Date();
   }
