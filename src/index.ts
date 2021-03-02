@@ -1,7 +1,7 @@
 import Utils from "./advisor/util/Utils";
 import Log from "./logger";
 import Logger from "./logger";
-import { Internal_Server_Error } from "./advisor/error/server_error/Server_Errors";
+import InternalServerError from "./advisor/error/server_error/InternalServerError";
 
 export default function errorAdvisor(options: any, err: any, res: any) {
   let error: any;
@@ -41,7 +41,7 @@ export default function errorAdvisor(options: any, err: any, res: any) {
       errorBasedOnStatusCode.timestamp,
     );
   } else {
-    const unrecognizedError: any = JSON.stringify(new Internal_Server_Error());
+    const unrecognizedError: any = JSON.stringify(new InternalServerError());
     error = Utils.errorBuilder(
       unrecognizedError.message,
       unrecognizedError.type,
