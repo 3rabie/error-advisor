@@ -2,9 +2,10 @@
   "name": "error-advisor",
   "version": "1.1.4",
   "description": "NPM module that aim to facilitate the error handling by providing http errors classes and also let you customize business errors as well with handy and clean way.",
+  "type": "module",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
   "scripts": {
+    "clean": "rimraf dist/*",
     "test": "echo \"Error: no test specified\"",
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
@@ -15,7 +16,6 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git@github.com:3rabie/error-advisor.git"
