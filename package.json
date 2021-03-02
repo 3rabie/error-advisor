@@ -1,6 +1,6 @@
 {
   "name": "error-advisor",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "NPM module that aim to facilitate the error handling by providing http errors classes and also let you customize business errors as well with handy and clean way.",
   "main": "lib/index.ts",
   "types": "lib/index.d.ts",
@@ -9,11 +9,11 @@
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test && npm run lint",
-    "preversion" : "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "type": "module",
   "repository": {
