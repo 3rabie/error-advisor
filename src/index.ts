@@ -3,7 +3,6 @@ import Log from "./logger";
 import Logger from "./logger";
 import { Internal_Server_Error } from "./advisor/error/server_error/Server_Errors";
 
-
 export default function errorAdvisor(options: any, err: any, res: any) {
   let error: any;
   const logger: Logger = new Log(options.env || false);
