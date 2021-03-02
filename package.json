@@ -1,6 +1,6 @@
 {
   "name": "error-advisor",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "NPM module that aim to facilitate the error handling by providing http errors classes and also let you customize business errors as well with handy and clean way.",
   "engines": {
     "node": "10"
