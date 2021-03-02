@@ -1,13 +1,16 @@
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class Request_Timeout extends Error {
+    statusCode: StatusCode;
+    type: string;
+    timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled - Request timeout";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled - Request timeout";
+        super(message);
         this.name = "Request Timeout";
-        Object.defineProperty(this, 'status', { value: StatusCode.REQUEST_TIMEOUT });
-        Object.defineProperty(this, 'type', { value: this });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.statusCode = StatusCode.REQUEST_TIMEOUT;
+        this.type = this.name;
+        this.timestamp = +new Date();
     }
 }

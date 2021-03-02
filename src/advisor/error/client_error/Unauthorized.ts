@@ -1,13 +1,16 @@
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class Unauthorized extends Error {
+    statusCode: StatusCode;
+    type: string;
+    timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled - Request requires user authentication.";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled - Request requires user authentication.";
+        super(message);
         this.name = "Unauthorized";
-        Object.defineProperty(this, 'status', { value: StatusCode.UNAUTHORIZED });
-        Object.defineProperty(this, 'type', { value: this });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.statusCode = StatusCode.UNAUTHORIZED;
+        this.type = this.name;
+        this.timestamp = +new Date();
     }
 }

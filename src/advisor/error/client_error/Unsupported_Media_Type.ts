@@ -1,13 +1,16 @@
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class Unsupported_Media_Type extends Error {
+    statusCode: StatusCode;
+    type: string;
+    timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled - Payload format is in an unsupported.";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled - Payload format is in an unsupported.";
+        super(message);
         this.name = "Unsupported Media Type";
-        Object.defineProperty(this, 'status', { value: StatusCode.UNSUPPORTED_MEDIA_TYPE });
-        Object.defineProperty(this, 'type', { value: this });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.statusCode = StatusCode.UNSUPPORTED_MEDIA_TYPE;
+        this.type = this.name;
+        this.timestamp = +new Date();
     }
 }

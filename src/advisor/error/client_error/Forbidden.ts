@@ -1,13 +1,16 @@
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class Forbidden extends Error {
+    statusCode: StatusCode;
+    type: string;
+    timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled - You are not allowed for this operation.";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled - You are not allowed for this operation.";
+        super(message);
         this.name = "Forbidden";
-        Object.defineProperty(this, 'status', { value: StatusCode.FORBIDDEN });
-        Object.defineProperty(this, 'type', { value: this });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.statusCode = StatusCode.FORBIDDEN;
+        this.type = this.name;
+        this.timestamp = +new Date();
     }
 }

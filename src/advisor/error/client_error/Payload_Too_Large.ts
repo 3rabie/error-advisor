@@ -1,13 +1,16 @@
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class Payload_Too_Large extends Error {
+    statusCode: StatusCode;
+    type: string;
+    timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled - Request entity is larger than limits defined by server.";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled - Request entity is larger than limits defined by server.";
+        super(message);
         this.name = "Payload Too Large";
-        Object.defineProperty(this, 'status', { value: StatusCode.PAYLOAD_TOO_LARGE });
-        Object.defineProperty(this, 'type', { value: this });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.statusCode = StatusCode.PAYLOAD_TOO_LARGE;
+        this.type = this.name;
+        this.timestamp = +new Date();
     }
 }

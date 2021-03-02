@@ -1,15 +1,15 @@
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class Bad_Request extends Error {
-    status: StatusCode;
+    statusCode: StatusCode;
     type: string;
     timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled - Malformed request syntax.";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled - Malformed request syntax.";
+        super(message);
         this.name = "Bad Request";
-        this.status = StatusCode.BAD_REQUEST;
+        this.statusCode = StatusCode.BAD_REQUEST;
         this.type = this.name;
         this.timestamp = +new Date();
     }

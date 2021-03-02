@@ -1,13 +1,16 @@
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class Variant_Also_Negotiates extends Error {
+    statusCode: StatusCode;
+    type: string;
+    timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled -  Internal server configuration error.";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled -  Internal server configuration error.";
+        super(message);
         this.name = "Variant Also Negotiates";
-        Object.defineProperty(this, 'status', { value: StatusCode.VARIANT_ALSO_NEGOTIATES });
-        Object.defineProperty(this, 'type', { value: this });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.statusCode = StatusCode.VARIANT_ALSO_NEGOTIATES;
+        this.type = this.name;
+        this.timestamp = +new Date();
     }
 }

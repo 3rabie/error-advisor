@@ -1,13 +1,16 @@
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class Not_Acceptable extends Error {
+    statusCode: StatusCode;
+    type: string;
+    timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled - Response generated is not supported from the client.";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled - Response generated is not supported from the client.";
+        super(message);
         this.name = "Not Acceptable";
-        Object.defineProperty(this, 'status', { value: StatusCode.NOT_ACCEPTABLE });
-        Object.defineProperty(this, 'type', { value: this });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.statusCode = StatusCode.NOT_ACCEPTABLE;
+        this.type = this.name;
+        this.timestamp = +new Date();
     }
 }

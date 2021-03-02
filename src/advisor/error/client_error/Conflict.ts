@@ -1,13 +1,16 @@
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class Conflict extends Error {
+    statusCode: StatusCode;
+    type: string;
+    timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled - Resource already exists or in use for another operation.";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled - Resource already exists or in use for another operation.";
+        super(message);
         this.name = "Conflict";
-        Object.defineProperty(this, 'status', { value: StatusCode.CONFLICT });
-        Object.defineProperty(this, 'type', { value: this });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.statusCode = StatusCode.CONFLICT;
+        this.type = this.name;
+        this.timestamp =  +new Date();
     }
 }

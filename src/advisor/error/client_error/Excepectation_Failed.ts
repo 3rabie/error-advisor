@@ -1,13 +1,16 @@
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class ExcepectationFailed extends Error {
+    statusCode: StatusCode;
+    type: string;
+    timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled - Cannot understand the Expect header or doesn't support it.";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled - Cannot understand the Expect header or doesn't support it.";
+        super(message);
         this.name = "Excepectation Failed";
-        Object.defineProperty(this, 'status', { value: StatusCode.EXPECTATION_FAILED });
-        Object.defineProperty(this, 'type', { value: this });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.statusCode = StatusCode.EXPECTATION_FAILED;
+        this.type = this.name;
+        this.timestamp = +new Date();
     }
 }

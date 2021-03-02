@@ -1,13 +1,16 @@
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class Proxy_Authentication_Required extends Error {
+    statusCode: StatusCode;
+    type: string;
+    timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled - The client must first authenticate itself with the proxy.";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled - The client must first authenticate itself with the proxy.";
+        super(message);
         this.name = "Proxy Authentication Required";
-        Object.defineProperty(this, 'status', { value: StatusCode.PROXY_AUTHENTICATION_REQUIRED });
-        Object.defineProperty(this, 'type', { value: this });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.statusCode = StatusCode.PROXY_AUTHENTICATION_REQUIRED;
+        this.type = this.name;
+        this.timestamp = +new Date();
     }
 }

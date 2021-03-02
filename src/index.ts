@@ -37,4 +37,5 @@ export default function errorAdvisor(options: any, err: any, res: any) {
 
 export * from "./advisor/error/client_error/Client_Errors";
 export * from "./advisor/error/server_error/Server_Errors";
+export { default as Utils } from "./advisor/util/Utils";
 

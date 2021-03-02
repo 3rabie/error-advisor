@@ -1,13 +1,16 @@
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class Gone extends Error {
+    statusCode: StatusCode;
+    type: string;
+    timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled - Resource has been removed and\or no longer available.";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled - Resource has been removed and\or no longer available.";
+        super(message);
         this.name = "Gone";
-        Object.defineProperty(this, 'status', { value: StatusCode.GONE });
-        Object.defineProperty(this, 'type', { value: this });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.statusCode = StatusCode.GONE;
+        this.type = this.name;
+        this.timestamp = +new Date();
     }
 }

@@ -1,13 +1,16 @@
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class Length_Required extends Error {
+    statusCode: StatusCode;
+    type: string;
+    timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled - The `Content-Length` is not defined.";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled - The `Content-Length` is not defined.";
+        super(message);
         this.name = "Length Required";
-        Object.defineProperty(this, 'status', { value: StatusCode.LENGTH_REQUIRED });
-        Object.defineProperty(this, 'type', { value: this });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.statusCode = StatusCode.LENGTH_REQUIRED;
+        this.type = this.name;
+        this.timestamp = +new Date();
     }
 }

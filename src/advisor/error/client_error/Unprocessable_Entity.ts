@@ -2,13 +2,16 @@ import { throws } from "assert";
 import { StatusCode } from "../../enum/StatusCode";
 
 export default class Unprocessable_Entity extends Error {
+    statusCode: StatusCode;
+    type: string;
+    timestamp: number;
 
-    constructor(msg?: string) {
-        msg = msg || "Request cannot be fulfilled - Unable to process the contained instructions.";
-        super(msg);
+    constructor(message?: string) {
+        message = message || "Request cannot be fulfilled - Unable to process the contained instructions.";
+        super(message);
         this.name = "Unprocessable Entity";
-        Object.defineProperty(this, 'status', { value: StatusCode.UNPROCESSABLE_ENTITY });
-        Object.defineProperty(this, 'type', { value: this });
-        Object.defineProperty(this, 'timestamp', { value: +new Date() });
+        this.statusCode = StatusCode.UNPROCESSABLE_ENTITY;
+        this.type = this.name;
+        this.timestamp = +new Date();
     }
 }
