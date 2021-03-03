@@ -15,7 +15,6 @@ export default function errorAdvisor(options: any, err: any, res: any) {
   ) {
     error = Utils.errorBuilder(err.message, err.type, err.statusCode, err.timestamp);
   } else if (err && err.hasOwnProperty("status")) {
-      
     const errorBasedOnStatusCode: any = Utils.errorFactory(err.status);
 
     error = Utils.errorBuilder(
