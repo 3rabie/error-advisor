@@ -9,7 +9,7 @@ export default class BadGateway extends Error {
     message = message || "Request cannot be fulfilled - Bad gateway.";
     super(message);
     this.name = "Bad Gateway";
-    this.statusCode = StatusCode.BAD_REQUEST;
+    this.statusCode = StatusCode.BAD_GATEWAY;
     this.type = this.name;
     this.timestamp = +new Date();
   }

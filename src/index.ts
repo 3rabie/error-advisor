@@ -5,17 +5,17 @@ import InternalServerError from "./advisor/error/server_error/InternalServerErro
 
 export default function errorAdvisor(options: any, err: any, res: any) {
   let error: any;
-  const logger: Logger = new Log(options.env || false);
-
+  const logger: Logger = new Log(options.env || "development");
   if (
     err &&
     err.hasOwnProperty("message") &&
     err.hasOwnProperty("type") &&
-    err.hasOwnProperty("status") &&
+    err.hasOwnProperty("statusCode") &&
     err.hasOwnProperty("timestamp")
   ) {
-    error = Utils.errorBuilder(err.message, err.type, err.status, err.timestamp);
+    error = Utils.errorBuilder(err.message, err.type, err.statusCode, err.timestamp);
   } else if (err && err.hasOwnProperty("status")) {
+      
     const errorBasedOnStatusCode: any = Utils.errorFactory(err.status);
 
     error = Utils.errorBuilder(
@@ -53,7 +53,6 @@ export default function errorAdvisor(options: any, err: any, res: any) {
   options && options.debug && typeof options.debug === "boolean" && (error.stack = err.stack);
 
   options && options.env && options.log && typeof options.log === "boolean" && logger.error(err);
-
   return res.status(error.status).json(error);
 }
 
